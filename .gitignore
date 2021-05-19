@@ -1,0 +1,3 @@
+# Project exclude paths
+/020-springboot-dubbo-interface/target/
+/023-springboot-dubbo-ssm-interface/target/

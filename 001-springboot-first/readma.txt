@@ -1,0 +1,127 @@
+SpringBoot讲解项目案例顺序
+1.如何创建一个springboot框架web项目
+2.使用springboot框架集成springMvc 的使用案例
+3.使用springboot框架的核心配置文件application.properties  的使用案例
+4.使用springboot框架的核心配置文件application.yml或者application.yaml
+    【里面写法格式是一样的，只不过是文件后缀不一样】
+    【记住默认就有一个空格，不要删】
+5.如果springboot框架的核心配置文件application.properties与application.yml或者application.yaml
+    同时存在的话
+        application.properties的优先级会比application.yml高。
+        【测试案例省略】
+6.多环境下的核心配置文件的使用（properties【注意这里面的配置上下文要写/】），工作中开发的环境有哪些：开发环境，测试环境，准生产环境，生产环境
+    ①配置文件的命名 application-XXX.properties   固定好了的
+    ②在主核心配置文件中激活指定使用的配置文件 【只要写 - 后面的内容,不需要写/】
+        例如：spring.profiles.active=XXX
+
+7.多环境下的核心配置文件的使用（yaml或yml【注意这里面的配置上下文要写/】），工作中开发的环境有哪些：开发环境，测试环境，准生产环境，生产环境
+    ①配置文件的命名 application-XXX.yml  固定好了的
+    ②在主核心配置文件中激活指定使用的配置文件 【只要写 - 后面的内容,不需要写/】
+            例如：spring.profiles.active=XXX
+
+8.springboot在核心配置文件application.properties自定义配置  一个一个获取 @Value
+9，springboot在核心配置文件将自定义配置映射到一个对象
+    其中两个知识点：①在映射对象中 添加 @ConfigurationProperties(prefix = "这里写配置文件中的前缀")
+                  ②在控制层添加注入   @Autowired
+
+10.springboot集成jsp
+    ①添加了一个文件夹webapp, 并且设置为 web资源文件夹   特殊文件夹【绿色小圆圈】
+    ②添加jsp依赖 ， 并且指定jsp存放的位置以及编译的位置还有哪些文件资源需要编译【写在build标签中resources标签中】
+    ③在核心文件夹中添加视图解析器
+
+12.springboot集成MyBatis
+        1）添加mysql依赖、mybatis整合springboot的起步依赖
+        2)使用Mybatis提供的逆向工程生成实体bean、映射文件、DAO接口
+            拓展：逆向工程生成实体bean、映射文件、DAO接口 【linux】
+                准备工作：     1）开启虚拟机，启动MySQL服务，mysql-5.7.18/bin目录下执行命令：./mysqld_safe &
+                            2）禁用防火墙：systemctl stop firewalld
+                            3）连接数据库
+
+                实际操作：①在pom文件中,添加mybatis代码自动生成插件 【以及再】 手动指定资源文件夹写在build标签中resources标签里
+                        ②再添加GeneratorMapper.xml文件【模板文件，里面的一些东西需要修改就可以用】
+                        ③打开maven---》Plugins------>mybatis-Generator中的mybatis-Generator。generate[双击它]
+        3）在核心配置文件中设置连接数据库的信息
+
+    13.代码省略：拓展12.一个知识就是Dao中一些写法不同：
+                写mapper 文件的时候需要在类前加 @Mapper   //扫描dao接口到spring容器【需要在每一个mapper接口类上添加】
+                但是我觉得  没写一个就要加一个，很麻烦可不可以一次性全部扫描到这些dao呢？
+                    可以在Applocation 类上再加一个  @MapperScan注解    //开启扫描Mapper接口的包以及子目录
+                    @MapperScan(basePackages="dao所在的绝对路径")
+                        例如：@MapperScan(basePackages="com.xiefuzhong.springboot.mapper")
+    14.代码省略：关于12.没有手动指定资源文件夹的话 ，编译出来的class文件中不会有XXXMapper.xml文件【前提是当dao接口和mapper映射文件都放在同一个文件夹中】：
+            不手动指定的话也有方法可以处理，①那就把mapper文件统一放在resources文件夹下的某个文件目录下也可以
+                                            例如： resources/mapper/XXXMapper.xml
+                                       ②然后再到核心配置文件中指定myBatis映射文件的路径
+                                        mybatis.mapper-location=classpath:mapper/*.xml
+
+16springboot项目下使用事务
+    事务是一个完整的功能，也叫做是一个完整的业务
+    事务只跟sql语句有关系？事务只跟DML语句有关系：增删改
+    DML,DQL,DDL,DCL
+17.springboot项目中使用springmvc注解的使用
+18.springboot使用RESTful风格
+19.springboot集成Redis
+    a.添加Redis数据类型的依赖
+    b.在springboot核心配置文件中添加Redis的配置
+        拓展：redis知识
+                启动redis服务【任何目录都行执行】  redis-server &
+                打开客户端 redis-cli
+                【可选：关闭防火墙和受保护模式 config set protected-mode no】【url带参数与？之间不要有空格，不然报错】
+
+20~22.springboot 集成dubbo分布式框架
+    a.接口工程：存放实体bean和业务接口【普通maven工程就行】
+    b.服务提供者：业务接口的实现类并将服务暴露且注册到注册中心。调用数据持久层【web工程。所以用springboot模板】
+        ---添加依赖（dubbo ,注册中心,接口工程）
+        ---配置服务提供者核心配置文件
+            ---Application类中也要增加一个注解开启dubbo配置，代码实现类中有个特殊的@service注解暴露接口服务
+    c.服务消费者：处理浏览器客户端发送的请求，从注册中心调用服务提供者所提供的服务
+         ---添加依赖（dubbo ,注册中心,接口工程）
+         ---配置服务消费者核心配置文件
+             ---Application类中也要增加一个注解开启dubbo配置，代码控制层有一个特殊的@Reference 注解
+
+         拓展：记得①开启linux中zook服务  在bin目录下：./zkServer.sh start
+                 停止                   ./zkServer.sh stop
+
+23-25.springboot集成dubbo, redis mybatis spring springmvc jsp
+    a.接口工程：存放实体bean和业务接口
+    b.服务提供者：它是一个springboot框架web项目，集成mybatis redis
+        ---添加依赖：mybatis mysql dubbo zookeeper redis 依赖以及接口工程
+        ---配置springboot核心配置文件
+                --配置连接数据库
+                --配置连接redis
+                --配置dubbo
+                    拓展： -配置pom文件 mapper映射文件的位置【不要忘记了】
+    c.服雾消费者：它是一个springboot框架web项目，集成jsp dubbo
+        ---添加依赖：dubbo zookeeper 依赖以及解析jsp页面的依赖[还有指定资源文件位置和配置视图解析器] 和接口工程
+        ---配置springboot核心配置文件
+                --配置视图解析器
+                --配置dubbo
+
+    总结：记住实体类要序列化
+          要指定mapper映射文件位置
+          要指定jsp所在位置 到springboot默认可以编译的位置里面
+          开启mysql服务以及zookeeper 服务
+
+
+26~29：创建非web工程的springboot。关闭修改springboot启动的logo(了解知道就行：省略代码)
+30.springboot使用拦截器【拦截不了jsp页面】
+    a.定义一个拦截器，实现HandlerInterceptor接口
+    b.创建一个配置类（即：在springmvc配置文件中使用mvc:interceptors标签）
+
+31-32使用servlet案例 两种实现【了解】
+    -创建一个servlet 他要继承HttpServlet 【重写doGet doPost方法】
+    【-在web.xml配置文件中使用servlet  servlet-mapping】
+        a.第一种方式【注解方式】：在servlet类上加注解@WebServlet(urlPatterns="/XXX路径")
+                    然后再启动入口类中加注解@ServletComponenScan(basePackages = "servlet所在的包名路径")  【作用是扫描这个servlet】
+        b.第二种方式【创建一个配置类】：在配置类上加@Configuration
+                                    在类里面加@bean以及写一个servlet方法 返回值为 ServletRegistrationBean
+ 33-34.springboot实现过滤器filter【过滤器依赖与servlet容器】【注意不可以使用/XXX/**  两个*会时效】
+    a.第一种方式：注解方式
+    b.第二种方式：注册组件
+
+35.springboot框架下设置字符编码
+    a.第一种：使用CharacterEncodingFilter   写在34里面 先见了servlet包以及SystemConfig配置类
+    b.第二种：springboot字符编码设置【直接在主配置文件中写，强力推荐】
+        重要代码就只要加这三句话：spring.http.encoding.enabled=true
+                spring.http.encoding.force=true
+                spring.http.encoding.charset=true
