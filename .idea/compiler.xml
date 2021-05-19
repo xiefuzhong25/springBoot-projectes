@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -12,12 +13,12 @@
         <module name="0026" />
         <module name="033-springboot-filter-1" />
         <module name="022-springboot-dubbo-consumer" />
-        <module name="006-springboot-multi-environment-properties" />
         <module name="021-springboot-dubbo-provider" />
+        <module name="006-springboot-multi-environment-properties" />
+        <module name="034-springboot-filter-2" />
         <module name="008-springboot-custom-configurationj" />
         <module name="012-springboot-mybatis" />
         <module name="010-springboot-jsp" />
-        <module name="034-springboot-filter-2" />
         <module name="023-springboot-dubbo-ssm-interface" />
         <module name="024-springboot-dubbo-ssm-provider" />
         <module name="001-springboot-first" />
@@ -28,6 +29,7 @@
         <module name="009-springboot-custom-configuration" />
         <module name="004-springboot-properties-yml-yaml" />
         <module name="025-springboot-dubbo-ssm-consumer" />
+        <module name="039-springboot-logback" />
         <module name="003-springboot-context-path" />
         <module name="016-springboot-transacation" />
       </profile>
@@ -56,6 +58,7 @@
       <module name="030-springboot-interceptor" target="11" />
       <module name="033-springboot-filter-1" target="11" />
       <module name="034-springboot-filter-2" target="11" />
+      <module name="039-springboot-logback" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -82,6 +85,7 @@
       <module name="030-springboot-interceptor" options="-parameters" />
       <module name="033-springboot-filter-1" options="-parameters" />
       <module name="034-springboot-filter-2" options="-parameters" />
+      <module name="039-springboot-logback" options="-parameters" />
     </option>
   </component>
 </project>

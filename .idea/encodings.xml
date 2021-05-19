@@ -23,5 +23,6 @@
     <file url="file://$PROJECT_DIR$/030-springboot-interceptor/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/033-springboot-filter-1/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/034-springboot-filter-2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/039-springboot-logback/src/main/java" charset="UTF-8" />
   </component>
 </project>

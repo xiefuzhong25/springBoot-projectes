@@ -30,6 +30,7 @@
         <option value="$PROJECT_DIR$/030-springboot-interceptor/pom.xml" />
         <option value="$PROJECT_DIR$/033-springboot-filter-1/pom.xml" />
         <option value="$PROJECT_DIR$/034-springboot-filter-2/pom.xml" />
+        <option value="$PROJECT_DIR$/039-springboot-logback/pom.xml" />
       </list>
     </option>
   </component>

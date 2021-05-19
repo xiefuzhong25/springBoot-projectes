@@ -25,6 +25,7 @@
       <module fileurl="file://$PROJECT_DIR$/030-springboot-interceptor/030-springboot-interceptor.iml" filepath="$PROJECT_DIR$/030-springboot-interceptor/030-springboot-interceptor.iml" />
       <module fileurl="file://$PROJECT_DIR$/033-springboot-filter-1/033-springboot-filter-1.iml" filepath="$PROJECT_DIR$/033-springboot-filter-1/033-springboot-filter-1.iml" />
       <module fileurl="file://$PROJECT_DIR$/034-springboot-filter-2/034-springboot-filter-2.iml" filepath="$PROJECT_DIR$/034-springboot-filter-2/034-springboot-filter-2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/039-springboot-logback/039-springboot-logback.iml" filepath="$PROJECT_DIR$/039-springboot-logback/039-springboot-logback.iml" />
     </modules>
   </component>
 </project>
