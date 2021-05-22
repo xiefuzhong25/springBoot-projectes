@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>数学运算</title>
+</head>
+<body>
+<h1>三元运算符 表达式？正确：错误</h1>
+<div th:text="${sex eq 1? '男':'女'}"></div>
+
+<h4>算术运算</h4>
+20+5=<span th:text="20+5"></span><br/>
+20-5=<span th:text="20-5"></span><br/>
+20*5=<span th:text="20*5"></span><br/>
+20/5=<span th:text="20/5"></span><br/>
+20%3=<span th:text="20%3"></span><br/>
+
+<h5>关系比较</h5>
+5>2为<span th:if="5 gt 2">真</span><br/>
+5<2为<span th:unless="5 lt 2">真</span><br/>
+1>=1为<span th:if="1 ge 1">真</span><br/>
+1<=1为<span th:if="1 le 1">真</span><br/>
+
+<h5>相等判断</h5>
+<span th:if="${sex == 1}">男</span><br/>
+<span th:if="${sex eq 1}">男</span><br/>
+<span th:unless="${sex ne 1}">女</span><br/>
+
+
+
+
+
+
+</body>
+</html>

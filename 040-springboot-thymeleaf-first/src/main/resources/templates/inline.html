@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>内敛文本以及内敛脚本的使用:取值使用：【【】】</title>
+</head>
+<body>
+<h6>普通方式</h6>
+<span th:text="${data}"></span>
+
+<h6>内敛文本：th:inline="text"</h6>
+<div th:inline="text">
+    使用内敛文本的方式获取的数据：[[${data}]],<br/>
+    但是官方说 必须要使用在加了内敛表达式的标签里面【此处是div】，才有用 【实际在外面也有用】
+</div>
+
+<h6>内敛脚本：th:inline="javascript"</h6>
+<script type="text/javascript" th:inline="javascript">
+        function showData() {
+            alert([[${data}]]);
+        }
+</script>
+<button th:onclick="showData()">展示数据</button>
+
+</body>
+</html>

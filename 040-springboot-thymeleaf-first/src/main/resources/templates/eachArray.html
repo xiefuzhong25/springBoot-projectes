@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>循环Map集合</title>
+</head>
+<body>
+<!--
+    school:当前循环的变量名（随意）
+    schoolStat:当前循环对象状态的变量(可选默认就是对象变量名+Stat)
+    ${sList}:当前循环的集合
+-->
+<h5>便历Array数组</h5>
+<div  th:each="school,schoolStat:${array}">
+    <h5>当前变量的索引  和位置</h5>
+    <span th:text="${schoolStat.index}">当前变量的索引</span>
+    <span th:text="${schoolStat.count}">记录当前变量的状态：数数</span>
+    <br/>
+    <span th:text="${school.id}"></span>
+    <span th:text="${school.name}"></span>
+    <span th:text="${school.phone}"></span>
+    <span th:text="${school.address}"></span>
+</div>
+<span>===================schoolStat可以省略==================================</span>
+<div  th:each="school:${array}">
+    <h5>当前变量的索引【从0开始】  和位置【从1开始】</h5>
+    <span th:text="${schoolStat.index}">当前变量的索引</span>
+    <span th:text="${schoolStat.count}">记录当前变量的状态：数数</span>
+    <br/>
+    <span th:text="${school.id}"></span>
+    <span th:text="${school.name}"></span>
+    <span th:text="${school.phone}"></span>
+    <span th:text="${school.address}"></span>
+</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>springboot集成thymeleaf</title>
+</head>
+<body>
+<h2 th:text="${data}">将要被data数据替换的内容</h2>
+<h2 th:text="${data}">发现不清楚页面缓存不能实时更新，每次都要重启服务器才行</h2>
+<h2 th:text="${data}">想要彻底清除缓存需要下面两步</h2>
+<h2 th:text="${data}">添加了主配置文件中关闭缓存还是不能实时更新</h2>
+<h2 th:text="${data}">记得还要在编辑的入口中 设置为update resources 热部署</h2>
+</body>
+</html>

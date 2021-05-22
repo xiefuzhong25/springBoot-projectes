@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--传统方式也可以-->
+<!--<script type="text/javascript" src="js/jquery-3.4.1.js"></script>-->
+<!--使用thymeleaf方式【注意是/开头】-->
+<script type="text/javascript" th:src="@{/js/jquery-3.4.1.js}"></script>
+
+
+
+<script type="text/javascript">
+
+    $(function () {
+        alert("======-----------");
+
+    })
+</script>
+<img th:src="@{/img/36xie.png}">
+</body>
+</html>

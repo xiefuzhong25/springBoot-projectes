@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>基本表达式内置对象的使用</title>
+</head>
+<body>
+<h5>从session中获取值</h5>
+<span th:text="${#session.getAttribute('data')}"></span><br/>
+<span th:text="${#httpSession.getAttribute('data')}"></span><br/>
+<span th:text="${session.data}"></span><br/>
+<h5>从request中获取东西</h5>
+<script type="text/javascript" th:inline="javascript">
+    //http://localhost:8080/springboot/builtIn
+    //获取协议名称
+    var  scheme = [[${#request.getScheme()}]];
+    //获取服务器名称
+    var serverName = [[${#request.getServerName()}]];
+    //获取服务器端口号
+    var serverport = [[${#request.getServerPort()}]];
+    //获取上下文根
+    var contextPath = [[${#request.getContextPath()}]];//这个项目中为空
+
+    var allPath = scheme + "://" +serverName +":"+serverport+contextPath;
+    // http://localhost:8080
+    alert(allPath);
+
+    var requestUrl = [[${#httpServletRequest.requestURL}]];
+    var queryString = [[${#httpServletRequest.queryString}]];//获取参数
+    var requestAddress = requestUrl + "?" +queryString;
+    // requestUrl==http://localhost:8080/builtIn
+    alert("requestUrl=="+requestUrl);
+    // queryString==id=10
+    alert("queryString=="+ queryString);
+    // requestAddress==http://localhost:8080/builtIn?id=10
+    alert("requestAddress=="+requestAddress);
+
+</script>
+
+
+
+</body>
+</html>

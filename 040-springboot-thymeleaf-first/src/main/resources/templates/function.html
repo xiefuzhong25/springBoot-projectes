@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.orh">
+<head>
+    <meta charset="UTF-8">
+    <title>功能表达式</title>
+</head>
+<body>
+<h4>功能表达式对象的使用</h4>
+<span th:text="${time}"></span>
+<div th:text="${#dates.format(time,'yyyy-MM-dd HH:mm:ss')}">区间范围【0,10）</div>
+<span th:text="${data}"></span>
+<div th:text="${#strings.substring(data,0,10)}">区间范围【0,10）</div>
+
+</body>
+</html>

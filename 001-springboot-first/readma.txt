@@ -125,3 +125,10 @@ SpringBoot讲解项目案例顺序
         重要代码就只要加这三句话：spring.http.encoding.enabled=true
                 spring.http.encoding.force=true
                 spring.http.encoding.charset=true
+
+
+39.配置日志文件
+40.关于thymeleaf的基本知识使用
+    配置：在主配置文件中关闭缓存
+        在依赖中添加Thymeleaf 的起步依赖、 添加lombok插件【前提是你安装了】的依赖【如果你不想写model的set,get方法，@data】
+        一定要在html文件中加命名空间 xmlns:th="http://www.thymeleaf.org"

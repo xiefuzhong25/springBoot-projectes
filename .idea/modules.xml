@@ -26,6 +26,7 @@
       <module fileurl="file://$PROJECT_DIR$/033-springboot-filter-1/033-springboot-filter-1.iml" filepath="$PROJECT_DIR$/033-springboot-filter-1/033-springboot-filter-1.iml" />
       <module fileurl="file://$PROJECT_DIR$/034-springboot-filter-2/034-springboot-filter-2.iml" filepath="$PROJECT_DIR$/034-springboot-filter-2/034-springboot-filter-2.iml" />
       <module fileurl="file://$PROJECT_DIR$/039-springboot-logback/039-springboot-logback.iml" filepath="$PROJECT_DIR$/039-springboot-logback/039-springboot-logback.iml" />
+      <module fileurl="file://$PROJECT_DIR$/040-springboot-thymeleaf-first/040-springboot-thymeleaf-first.iml" filepath="$PROJECT_DIR$/040-springboot-thymeleaf-first/040-springboot-thymeleaf-first.iml" />
     </modules>
   </component>
 </project>
