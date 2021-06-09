@@ -1,5 +1,7 @@
 package com.xiefuzhong.springboot.model;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
+
 public class User {
 
     private  Integer id;
