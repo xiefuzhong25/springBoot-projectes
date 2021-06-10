@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>050-springboot-parent</artifactId>
+        <groupId>com.xiefuzhong.springboot</groupId>
+        <version>1.0.0</version>
+        <relativePath>../050-springboot-parent/pom.xml</relativePath>
+    </parent>
+<!--    <groupId>com.xiefuzhong.springboot</groupId>-->
+    <artifactId>053-springboot-dubbo-ssm-consumer</artifactId>
+<!--    <version>1.0.0</version>-->
+
+
+        <!--    dubbo  zookeeper thymeleaf 接口工程-->
+    <dependencies>
+<!--        springboot框架集成thymeleaf前端模板引擎起步依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+<!--        springboot集成web的起步依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!--        dubbo集成springboot框架的起步依赖-->
+        <dependency>
+            <groupId>com.alibaba.spring.boot</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+        </dependency>
+        <!--        注册中心-->
+        <dependency>
+            <groupId>com.101tec</groupId>
+            <artifactId>zkclient</artifactId>
+        </dependency>
+        <!--        接口工程-->
+        <dependency>
+            <groupId>com.xiefuzhong.springboot</groupId>
+            <artifactId>051-springboot-dubbo-ssm-interface</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+
+        <!--springboot集成web测试的起步依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+
+
+<!--          springboot项目编译打包插件-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
