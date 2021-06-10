@@ -32,6 +32,11 @@
         <option value="$PROJECT_DIR$/034-springboot-filter-2/pom.xml" />
         <option value="$PROJECT_DIR$/039-springboot-logback/pom.xml" />
         <option value="$PROJECT_DIR$/040-springboot-thymeleaf-first/pom.xml" />
+        <option value="$PROJECT_DIR$/050-springboot-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/052-springboot-dubbo-provider/pom.xml" />
+        <option value="$PROJECT_DIR$/053-springboot-dubbo-ssm-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/052-springboot-dubbo-ssm-provider/pom.xml" />
+        <option value="$PROJECT_DIR$/deam/pom.xml" />
       </list>
     </option>
   </component>

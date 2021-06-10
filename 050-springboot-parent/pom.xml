@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+<!--    让父工程变成springboot工程-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.0</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.xiefuzhong.springboot</groupId>
+    <artifactId>050-springboot-parent</artifactId>
+    <version>1.0.0</version>
+    <modules>
+        <module>../051-springboot-dubbo-ssm-interface</module>
+
+    </modules>
+
+    <!--    父工程必须要这样设置，而且删掉src文件夹-->
+    <packaging>pom</packaging>
+
+<!--    管理版本号-->
+    <properties>
+        <java.version>11</java.version>
+        <dubbo-spring-boot-starter-version>2.0.0</dubbo-spring-boot-starter-version>
+        <zkclient.version>0.11</zkclient.version>
+        <mybatis-spring-boot-starter-version>2.0.0</mybatis-spring-boot-starter-version>
+
+
+    </properties>
+
+<!--    管理springboot没有管理的依赖-->
+    <dependencyManagement>
+        <dependencies>
+            <!--        dubbo集成springboot框架的起步依赖-->
+            <dependency>
+                <groupId>com.alibaba.spring.boot</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo-spring-boot-starter-version}</version>
+            </dependency>
+            <!--        注册中心-->
+            <dependency>
+                <groupId>com.101tec</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>${zkclient.version}</version>
+            </dependency>
+            <!--        添加mybatis整合springboot框架的起步依赖-->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot-starter-version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>

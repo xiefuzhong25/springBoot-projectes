@@ -27,6 +27,10 @@
       <module fileurl="file://$PROJECT_DIR$/034-springboot-filter-2/034-springboot-filter-2.iml" filepath="$PROJECT_DIR$/034-springboot-filter-2/034-springboot-filter-2.iml" />
       <module fileurl="file://$PROJECT_DIR$/039-springboot-logback/039-springboot-logback.iml" filepath="$PROJECT_DIR$/039-springboot-logback/039-springboot-logback.iml" />
       <module fileurl="file://$PROJECT_DIR$/040-springboot-thymeleaf-first/040-springboot-thymeleaf-first.iml" filepath="$PROJECT_DIR$/040-springboot-thymeleaf-first/040-springboot-thymeleaf-first.iml" />
+      <module fileurl="file://$PROJECT_DIR$/050-springboot-parent/050-springboot-parent.iml" filepath="$PROJECT_DIR$/050-springboot-parent/050-springboot-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/051-springboot-dubbo-ssm-interface/051-springboot-dubbo-ssm-interface.iml" filepath="$PROJECT_DIR$/051-springboot-dubbo-ssm-interface/051-springboot-dubbo-ssm-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/052-springboot-dubbo-ssm-provider/052-springboot-dubbo-ssm-provider.iml" filepath="$PROJECT_DIR$/052-springboot-dubbo-ssm-provider/052-springboot-dubbo-ssm-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/053-springboot-dubbo-ssm-consumer/053-springboot-dubbo-ssm-consumer.iml" filepath="$PROJECT_DIR$/053-springboot-dubbo-ssm-consumer/053-springboot-dubbo-ssm-consumer.iml" />
     </modules>
   </component>
 </project>

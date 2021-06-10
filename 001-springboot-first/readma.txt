@@ -5,6 +5,7 @@ SpringBoot讲解项目案例顺序
 4.使用springboot框架的核心配置文件application.yml或者application.yaml
     【里面写法格式是一样的，只不过是文件后缀不一样】
     【记住默认就有一个空格，不要删】
+
 5.如果springboot框架的核心配置文件application.properties与application.yml或者application.yaml
     同时存在的话
         application.properties的优先级会比application.yml高。
